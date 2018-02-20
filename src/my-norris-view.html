@@ -1,0 +1,129 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
+
+  <script src="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror-worker.js"></script> -->
+
+  <link rel="lazy-import" href="../bower_components/app-storage/test/app-indexeddb-mirror/app-indexeddb-mirror.html">
+
+  <link rel="import" href="../bower_components/app-pouchdb/app-pouchdb-document.html">
+
+
+
+
+<dom-module id="my-norris-view">
+<template>
+
+
+    <style include="shared-styles">
+      :host {
+        display: block;
+}
+
+    </style>
+
+
+
+
+
+<div class="card">
+    <!-- bind to the "owner" property -->
+    <p><b>Hier deinen Namen eingeben:</b></p>
+    
+    <!-- iron-input exposes a two-way bindable input value -->
+    <iron-input bind-value="{{owner}}">
+      <!-- 
+      TODO: Edit the placeholder text to see two-way data binding at work.
+      --> 
+      <input is="iron-input" placeholder="Your name here...">
+    </iron-input>
+
+    <p>Hallo <b>[[owner]]</b>! Guten Tag </p>
+
+    <button on-click="handleClick">ClickMe</button>
+</div>
+
+
+
+<div class="card">
+Was Soll in indexedDB gespeichert werden?
+  <iron-input bind-value="{{index}}">
+    <input is="iron-input" >
+  </iron-input>
+
+        <app-indexeddb-mirror
+            session="{{index}}"
+            key="basic-mirror">
+        </app-indexeddb-mirror>
+  </div>
+
+
+  <div class="card">
+
+    <p><b>Iron Input</b></p>
+
+<iron-input bind-value="{{image}}">
+  <input id="{{image}}" type="file">
+</iron-input>
+
+<button on-click="showClick">ClickMe</button>
+  </div>
+
+  <div class="card">
+        <h1>Using a local Pouchdb</h1>
+  
+        <app-pouchdb-document
+          db-name="local"
+          doc-id="whateverdocid"
+          data="{{exampleDoc}}">
+        </app-pouchdb-document>
+        <div class="">
+          Document name: [[exampleDoc.name]]
+        </div>
+        <input
+            is="iron-input"
+            bind-value="{{exampleDoc.name}}">
+        </input>
+      </div>
+
+
+
+
+  </template>
+
+  <script>
+
+
+
+  class MyNorrisView extends Polymer.Element {
+      static get is() { return 'my-norris-view';}
+      static get properties(){
+        return {
+          owner: {
+            type: String,
+          }
+        }
+      }
+      static get properties() {
+       return {
+            exampleDoc: Object,
+      }
+    }
+handleClick(){
+  console.log("Hallo");
+}
+showClick(){
+//->
+console.log("Hallihaloo")
+ };};
+
+
+window.customElements.define(MyNorrisView.is, MyNorrisView);
+
+  </script>
+</dom-module>

@@ -1,0 +1,70 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror-client.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+<dom-module id="my-view1">
+<template>
+
+
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      google-map {
+    height: 350px;
+  }
+    </style>
+      <h1>Google Api'S</h1>
+
+<div class="card">   
+
+
+      <h2>Google Maps</h2>
+
+      <google-map fit-to-markers api-key="AIzaSyDenhaitDfcXkfNFpYnEjoumXEro70mS8w">
+          <google-map-marker latitude="48.204618" longitude="11.15948"
+          title="Dahoam"></google-map-marker>
+        <google-map-marker latitude="48.17235" longitude="11.5320" draggable="true"></google-map-marker titel="this one is
+          draggable" draggable="true">
+        </google-map>
+ </div>
+<div class="card">
+<h3>Google Youtube</h3>
+
+<google-youtube id="googleYouTube"
+playsupported="{{playSupported}}"
+video-id="mN7IAaRdi_k"
+state="{{state}}"
+currenttime="{{currentTime}}"
+currenttimeformatted="{{currentTimeFormatted}}"
+duration="{{duration}}"
+durationformatted="{{durationFormatted}}"
+fractionloaded="{{fractionLoaded}}"
+volume="{{volume}}"
+playbackrate="{{playbackRate}}"
+playbackquality="{{playbackQuality}}"
+on-google-youtube-state-change="handleStateChange"
+on-google-youtube-error="handleYouTubeError">
+</google-youtube>
+
+</div>
+
+
+  </template>
+
+  <script>
+    class MyView1 extends Polymer.Element {
+      static get is() { return 'my-view1'; }
+    }
+
+    window.customElements.define(MyView1.is, MyView1);
+  </script>
+</dom-module>

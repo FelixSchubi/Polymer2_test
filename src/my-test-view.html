@@ -1,0 +1,216 @@
+<!-- Load the Polymer.Element base class -->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/web-animations-js/web-animations-next-lite.min.html">
+
+  <!-- <link rel="import" href="../bower_components/app-storage/test/app-indexeddb-mirror/app-indexeddb-mirror.html"> -->
+    <link rel="import" href="../bower_components/neon-animation/web-animations.html">
+    <link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+    <link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+    
+
+
+<link rel="import" href="shared-styles.html">
+
+
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+
+
+
+<!-- 
+
+<link rel="import" href="../../bower_components/polymer/lib/elements/custom-style.html"> -->
+
+
+
+
+<dom-module id="my-test-view">
+
+  <!-- Defines the element's style and local DOM -->
+  <template>
+    <style
+      include="shared-styles"> 
+
+      :host {
+        display: block;
+
+        padding: 16px;
+      }
+      
+paper-card {
+        width: 500px;
+        box-shadow: none;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+
+ paper-button {
+        display: block;
+        background: #4285f4;
+        color: #fff;
+      }
+      paper-listbox {
+        display: block;
+      }
+      paper-menu-button {
+        margin: auto;
+      }
+      iron-image {
+        padding: 1em;
+      }
+      .item {
+        max-width: 300px;
+      }
+      .horizontal-section {
+        text-align: center;
+      }
+
+paper-button.indigo {
+    background-color: var(--paper-indigo-500);
+    color: white;
+    --paper-button-raised-keyboard-focus: {
+      background-color: var(--paper-pink-a200) !important;
+      color: white !important;
+      max-width: 28%;
+    };
+  }
+paper-button.indigo:hover {
+    background-color: var(--paper-indigo-400);
+  }
+
+
+ #alignedDialog {
+    margin: 0;
+  }
+
+    </style>
+ <!-- <div class="card">
+<h1>Quotes</h1>
+<blockquote>[[quote]]</blockquote>
+<paper-button raised on-tap="getQuote" class="primary">Neuer Spruch</paper-button>
+
+<iron-ajax
+id="getQuoteAjax"
+auto
+url="http://localhost:3001/api/random-quote"
+method="get"
+handle-as="text"
+last-response="{{quote}}">
+</iron-ajax>
+</div> -->
+
+<div class="card">
+
+
+    <style is="custom-style">
+        #alignedDialog {
+          margin: 0;
+        }
+      </style>
+      <paper-button raised onclick="openBy(this)">Open</paper-button>
+
+      <paper-dialog id="alignedDialog" no-overlap horizontal-align="left" vertical-align="top">
+        <h2>Aligned dialog</h2>
+        <paper-dialog-scrollable>
+          <p>Hallo hiert steh teom wenig text</p>
+        </paper-dialog-scrollable>
+      </paper-dialog>
+      
+      <script>
+        function openBy(element) {
+          alignedDialog.positionTarget = element;
+          alignedDialog.open();
+        }
+      </script>
+</div>
+
+
+<div class="card">
+        <div class="circle">X</div>
+        <h1>Testfeld</h1>
+        <p>Hier hat man die Möglichkeit einen beliebigen Text hineinzuschreiben</p>
+        <p><b>Hier könnte Ihre Werbung stehen!!</b></p>
+      </div>
+
+
+
+      
+
+
+
+
+      <br/>
+    <paper-checkbox>paper-checkbox</paper-checkbox>
+    <br/>
+    <p><b>paper-slider</b></p>
+    <paper-slider value="70"></paper-slider>
+    
+    <br/>
+   
+          <paper-dropdown-menu label="Paper-Dropdown-Menu">
+              <paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">
+                  <paper-item>Hallo</paper-item>
+                  <paper-item>Test</paper-item>
+                  <paper-item>Work</paper-item>
+              </paper-listbox>
+   </paper-dropdown-menu>
+
+<br/><br/><br/>
+
+              <paper-input always-float-label label="always-float-label"></paper-input>
+              <paper-input label="normal-label"></paper-input>
+           
+<paper-input label="     Hier Personalnummer eingeben / Nur Zifferneingabe möglich" type="number">
+
+  </paper-input>
+  
+  <paper-input label="vorname.nachname" id="inputWithButton">
+    <iron-icon icon="mail" slot="prefix"></iron-icon>
+    <div slot="suffix">@muenchen.de</div>
+
+  </paper-input>
+
+   <paper-button raised class="indigo">Raised Button</paper-button>
+
+          
+
+ <br/><br/>
+
+
+ 
+
+</template>
+
+
+
+  <script>
+    // Your new element extends the Polymer.Element base class
+    class MyTestView extends Polymer.Element {
+      static get is() { return 'my-test-view'; }
+      getQuote() {
+        this.$.getQuoteAjax.generateRequest();
+    }
+   
+    }
+    //Now, register your new custom element so the browser can use it
+    customElements.define(MyTestView.is, MyTestView);
+
+
+
+
+  </script>
+</dom-module>
