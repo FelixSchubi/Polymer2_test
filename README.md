@@ -2,6 +2,10 @@
 
 - Notes Overlay von Weather-PWA in Polymer bauen
   - Welche Form von IndexedDB verwenden?
+  
+  
+ ### WebComponents
+ - https://www.webcomponents.org/
 
 
 ### Polymer App Toolbox - Starter Kit
