@@ -6,6 +6,10 @@
   
  ### WebComponents
  - https://www.webcomponents.org/
+    - https://www.webcomponents.org/element/google/uniflow-polymer Mit Indexeddb verwenden geht nicht!!
+  
+### App Storage
+  -> https://www.webcomponents.org/element/PolymerElements/app-storage
 
 
 ### Polymer App Toolbox - Starter Kit
