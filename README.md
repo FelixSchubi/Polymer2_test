@@ -2,6 +2,9 @@
 
 - Notes Overlay von Weather-PWA in Polymer bauen
   - Welche Form von IndexedDB verwenden?
+ 
+ - https://todopoly97.firebaseapp.com/  !!
+ - https://codelabs.developers.google.com/codelabs/polymer-firebase-pwa/index.html?index=..%2F..%2Findex#25
   
   
  ### WebComponents
