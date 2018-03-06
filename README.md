@@ -1,5 +1,6 @@
-# ShopApp
-    - https://github.com/Polymer/shop
+# News App Case Study
+
+    - https://www.polymer-project.org/2.0/toolbox/case-study
 - Applikation ausdünnen!
 - Einbauen einer Todo/Bild Funktion
 - Einarbeitung in die Struktur
