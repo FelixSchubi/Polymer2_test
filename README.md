@@ -1,3 +1,11 @@
+# ShopApp
+    - https://github.com/Polymer/shop
+- Applikation ausdünnen!
+- Einbauen einer Todo/Bild Funktion
+- Einarbeitung in die Struktur
+- "Mixin's" ?
+
+
 # Todo
 
 - Notes Overlay von Weather-PWA in Polymer bauen
