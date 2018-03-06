@@ -4,7 +4,8 @@
 - Applikation ausdünnen!
 - Einbauen einer Todo/Bild Funktion
 - Einarbeitung in die Struktur
-- "Mixin's" ?
+- "Mixin's" ? <br/>
+    -> https://news-docs.polymer-project.org/docs/using.html
 
 
 # Todo
