@@ -1,5 +1,9 @@
 # News App Case Study
 
+        - https://www.webcomponents.org/element/vaadin/vaadin-upload/demo/demo/index.html
+
+
+
     - https://www.polymer-project.org/2.0/toolbox/case-study
 - Applikation ausdünnen!
 - Einbauen einer Todo/Bild Funktion
