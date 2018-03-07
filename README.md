@@ -5,7 +5,8 @@
 - Einbauen einer Todo/Bild Funktion
 - Einarbeitung in die Struktur
 - "Mixin's" ? <br/>
-    -> https://news-docs.polymer-project.org/docs/using.html
+    -> https://news-docs.polymer-project.org/docs/using.html    <br/>
+    -> https://meowni.ca/posts/polymer-2-cheatsheet/
 
 
 # Todo
